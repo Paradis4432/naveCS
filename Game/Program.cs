@@ -8,13 +8,11 @@ namespace Game
 {
     /*
      * TODO:
-     * singleton para nave
-     * balas
      * animaciones
-     * UML
+     * balas
      * agujero negro
      * agujero de gusano
-     * 
+     * UML
      */
     public class Program
     {
