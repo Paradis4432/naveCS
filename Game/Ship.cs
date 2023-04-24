@@ -4,28 +4,8 @@ using System.Media;
 
 namespace Game {
     // aplicar singleton a Ship porque solo puede haber 1 nave
-    public struct Ship {
+    public class Ship {
 
-        //float x;
-        //float y;
-        //float vx;
-        //float vy;
-        //float ax;
-        //float ay;
-        //float ang;
-        //float vang;
-        //float aang;
-        //float masa;
-
-        //static Vector2 pos = new Vector2(100,100);
-        //static Vector2 vel = new Vector2(0,0);
-        //static Vector2 ace = new Vector2(0,0);
-        //float ang;
-        //float masa;
-        //static Vector2 velAceAng = new Vector2(0,0);
-        //static Vector2 dir = new Vector2(0,0);
-        //static bool alive = true;
-        //static int speed = 5;
 
         Cuerpo nave;
         private Vector2 initialPos;

@@ -52,7 +52,6 @@ namespace Game
 
                         break;
                     case GameStage.Gameplay:
-
                         if (secsCounter >= 30) {
                             stage = GameStage.Win;
                             break;
