@@ -32,7 +32,8 @@ namespace Game
             Engine.Initialize();
             stage = GameStage.Menu;
 
-            ship = new Ship(new Vector2(375, 275));
+            //ship = new Ship(new Vector2(375, 275));
+            ship = Ship.GetInstance();
 
             timer = new System.Threading.Timer(OnTimedEvent, null, 0, 1000);
 

@@ -5,16 +5,21 @@ using System.Media;
 namespace Game {
     // aplicar singleton a Ship porque solo puede haber 1 nave
     public class Ship {
-
-
         Cuerpo nave;
         private Vector2 initialPos;
 
-        public Ship(Vector2 initialPos) {
+        private Ship(Vector2 initialPos) {
             this.initialPos = initialPos;
             nave = new Cuerpo(initialPos);
             nave.speed = 0.2F;
             nave.rad = 30;
+        }
+
+        private static Ship instance;
+
+        public static Ship GetInstance() {
+            if (instance == null) { instance = new Ship(new Vector2(375, 275)); }
+            return instance;
         }
 
         public Cuerpo GetNave() { return nave; }
