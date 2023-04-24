@@ -12,6 +12,9 @@ namespace Game
      * balas
      * animaciones
      * UML
+     * agujero negro
+     * agujero de gusano
+     * 
      */
     public class Program
     {
