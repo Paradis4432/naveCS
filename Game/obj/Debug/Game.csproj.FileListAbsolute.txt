@@ -1,0 +1,257 @@
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\Engine.dll
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\ship.png
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\Game.exe
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\bin\Debug\Game.pdb
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.exe
+P:\SPARDOX\ACADEMICO\UADE Materias\IOO\ProyectoBase\Game\obj\Debug\Game.pdb
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Engine.dll
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\ship.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Game.exe
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Game.pdb
+C:\Users\p703\Desktop\ProyectoBase\Game\obj\Debug\Game.exe
+C:\Users\p703\Desktop\ProyectoBase\Game\obj\Debug\Game.pdb
+C:\Users\p703\Desktop\ProyectoBase\Game\obj\Debug\Game.csprojAssemblyReference.cache
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\XP.wav
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\0.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\3.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle10.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle11.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle12.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle3.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle4.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle5.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle6.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle7.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle8.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle9.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left10.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left11.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left12.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left3.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left4.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left5.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left6.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left7.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left8.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\idle_left9.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\jump1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\jump2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\jump_left1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\jump_left2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run3.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run4.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run5.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run6.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run7.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run8.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left1.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left2.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left3.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left4.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left5.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left6.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left7.png
+C:\Users\p703\Desktop\ProyectoBase\Game\bin\Debug\Animations\player\run_left8.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\obj\Debug\Game.exe
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\obj\Debug\Game.pdb
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\0.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\3.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle10.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle11.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle12.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle3.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle4.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle5.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle6.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle7.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle8.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle9.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left10.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left11.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left12.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left3.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left4.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left5.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left6.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left7.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left8.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left9.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump_left1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump_left2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run3.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run4.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run5.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run6.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run7.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run8.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left1.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left2.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left3.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left4.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left5.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left6.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left7.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left8.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Engine.dll
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\ship.png
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\XP.wav
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Game.exe
+D:\Paradigmas de Programación\ProyectoBase 5 del 4\Game\bin\Debug\Game.pdb
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\0.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\3.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle10.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle11.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle12.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle3.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle4.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle5.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle6.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle7.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle8.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle9.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left10.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left11.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left12.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left3.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left4.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left5.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left6.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left7.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left8.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\idle_left9.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump_left1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\jump_left2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run3.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run4.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run5.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run6.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run7.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run8.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left1.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left2.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left3.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left4.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left5.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left6.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left7.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Animations\player\run_left8.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Engine.dll
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\ship.png
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\XP.wav
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Game.exe.config
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Game.exe
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\bin\Debug\Game.pdb
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\obj\Debug\Game.exe
+C:\Users\P602\Desktop\ProyectoBase 5 del 4\Game\obj\Debug\Game.pdb
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\obj\Debug\Game.exe
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\obj\Debug\Game.pdb
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\0.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\3.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle10.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle11.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle12.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle3.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle4.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle5.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle6.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle7.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle8.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle9.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left10.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left11.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left12.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left3.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left4.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left5.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left6.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left7.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left8.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\idle_left9.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\jump1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\jump2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\jump_left1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\jump_left2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run3.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run4.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run5.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run6.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run7.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run8.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left1.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left2.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left3.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left4.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left5.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left6.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left7.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Animations\player\run_left8.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Engine.dll
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\ship.png
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\XP.wav
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Game.exe.config
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Game.exe
+C:\Users\P602\Desktop\ProyectoBase 12 del 4\Game\bin\Debug\Game.pdb
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\obj\Debug\Game.exe
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\obj\Debug\Game.pdb
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\Engine.dll
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\Game.exe.config
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\Game.exe
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\Game.pdb
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\obj\Debug\Game.csproj.AssemblyReference.cache
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\obj\Debug\Game.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\obj\Debug\Game.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\lost.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\menu.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\meteor.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\background.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\meteorRED.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\dotGREEN.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship1.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\win.png
