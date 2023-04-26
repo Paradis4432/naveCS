@@ -42,12 +42,16 @@
     <Compile Include="Utils.cs" />
     <Compile Include="Ship.cs" />
 	<Compile Include="Cuerpo.cs" />
-	<Compile Include="Meteors.cs" />
+	  <Compile Include="Meteors.cs" />
+	  <Compile Include="Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
 	<Content Include="ship.png">
 		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</Content>
+	  <Content Include="bullet.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="ship1.png">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>

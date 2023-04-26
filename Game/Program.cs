@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Media;
 using System.Threading;
 using System.Timers;
@@ -13,6 +14,8 @@ namespace Game
      * agujero negro
      * agujero de gusano
      * UML
+     * fix Delta time
+     * reset ship.png 
      */
     public class Program
     {
@@ -21,6 +24,9 @@ namespace Game
         static private GameStage stage;
         static private int secsCounter = 0;
         static List<Meteors> mets = new List<Meteors>();
+        static public List<Bullet> bulletsShoot = new List<Bullet>();
+        static private int points = 0;
+
 
         static private System.Threading.Timer timer;
 
@@ -56,7 +62,7 @@ namespace Game
                             break;
                         }
 
-                        CS = ship.GetNave();
+                        CS = ship.Nave;
                         Update();
                         Draw();
                         
@@ -81,6 +87,7 @@ namespace Game
                     case GameStage.Win:
                         Engine.Clear();
 
+                        Engine.Debug(points);
                         Engine.Draw(Engine.GetTexture("win.png"), 0, 0);
 
                         Engine.Show();
@@ -89,7 +96,7 @@ namespace Game
 
 
                         break;
-
+                        
                 }
 
             }
@@ -106,14 +113,28 @@ namespace Game
 
         static void Update() {
             ship.Update();
-            foreach (var met in mets)
+            foreach (var met in mets.ToList())
             {
                 // if any met is colliding with ship.pos
                 //Vector2 shipRealPos = new Vector2(0,0);
                 //shipRealPos.x = CS.pos.x + (ship.imgW / 2);
                 //shipRealPos.y = CS.pos.y + (ship.imgH / 2);
 
-                if (Vector2.Colliding(met.GetMet().pos, CS.pos, met.GetMet().rad - 4, CS.rad - 6)) {
+                foreach (var bull in bulletsShoot.ToList()) {
+
+                    if (!bull.Bala.alive) bulletsShoot.Remove(bull);
+                    
+
+                    if (Vector2.Colliding(met.met.pos, bull.Bala.pos, met.met.rad - 4, bull.Bala.rad - 3)) {
+                        bulletsShoot.Remove(bull);
+                        mets.Remove(met);
+                        points++;
+                    }
+                    bull.Update();
+
+                }
+
+                if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) {
                     //tempMetLostPos = met.GetMet().pos;  
                     stage = GameStage.Lost;
                 }
@@ -128,7 +149,7 @@ namespace Game
             //Engine.Draw(Engine.GetTexture("background.png"), 0, 0);
 
             ship.Draw();
-            foreach (var met in mets) {
+            foreach (var met in mets.ToList()) {
                 met.Draw();
             }
 
