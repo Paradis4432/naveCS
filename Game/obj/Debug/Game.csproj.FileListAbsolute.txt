@@ -255,3 +255,4 @@ C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\
 C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\dotGREEN.png
 C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship1.png
 C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\win.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\bullet.png

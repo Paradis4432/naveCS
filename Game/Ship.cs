@@ -59,7 +59,7 @@ namespace Game {
 
             }
 
-            foreach (var bullet in Program.bulletsShoot)
+            foreach (var bullet in Program.bulletsShoot.ToList())
             {
                 bullet.Draw();
             }

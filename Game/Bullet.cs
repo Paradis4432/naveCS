@@ -41,11 +41,11 @@ namespace Game {
 
             Move();
 
-            Engine.Debug("updating bullet dirx: " + Bala.dir.x);
-            Engine.Debug("updating bullet diry: " + Bala.dir.y);
-            Engine.Debug("updating bullet speed: " + Bala.speed);
-            Engine.Debug("updating bullet posx: " + Bala.pos.x);
-            Engine.Debug("updating bullet posy: " + Bala.pos.y);
+            //Engine.Debug("updating bullet dirx: " + Bala.dir.x);
+            //Engine.Debug("updating bullet diry: " + Bala.dir.y);
+            //Engine.Debug("updating bullet speed: " + Bala.speed);
+            //Engine.Debug("updating bullet posx: " + Bala.pos.x);
+            //Engine.Debug("updating bullet posy: " + Bala.pos.y);
 
             //Nave.AplicarFriccion(1, 0.05f);
             Bala.CalcularFisica(1F);

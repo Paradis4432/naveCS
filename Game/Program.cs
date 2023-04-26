@@ -10,13 +10,14 @@ namespace Game
     /*
      * TODO:
      * animaciones
-     * balas
      * agujero negro
      * agujero de gusano
      * UML
      * fix Delta time
      * reset ship.png 
-     * test
+     * retroseso al disprar
+     * cooldown para disparar
+     * spawn random de met
      */
     public class Program
     {
@@ -111,8 +112,6 @@ namespace Game
 
             mets.Add(new Meteors(CS.pos, new Vector2(50, 1)));
             secsCounter++;
-
-            
         }
 
         private static void CheckColls(Object stateInfo) {
