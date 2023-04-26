@@ -29,6 +29,7 @@ namespace Game
 
 
         static private System.Threading.Timer timer;
+        static private System.Threading.Timer checkColls;
 
 
         static void Main(string[] args)
@@ -40,6 +41,7 @@ namespace Game
             ship = Ship.GetInstance();
 
             timer = new System.Threading.Timer(OnTimedEvent, null, 0, 1000);
+            checkColls = new System.Threading.Timer(CheckColls, null, 0, 100);
 
             while (true)
             {
@@ -61,6 +63,7 @@ namespace Game
                             stage = GameStage.Win;
                             break;
                         }
+                        Engine.Debug(mets.Count);
 
                         CS = ship.Nave;
                         Update();
@@ -107,39 +110,46 @@ namespace Game
 
             mets.Add(new Meteors(CS.pos, new Vector2(50, 1)));
             secsCounter++;
+
+            
         }
 
-        //static Vector2 tempMetLostPos;
-
-        static void Update() {
-            ship.Update();
-            foreach (var met in mets.ToList())
-            {
+        private static void CheckColls(Object stateInfo) {
+            // update every 100 mils
+            foreach (var met in mets.ToList()) {
                 // if any met is colliding with ship.pos
                 //Vector2 shipRealPos = new Vector2(0,0);
                 //shipRealPos.x = CS.pos.x + (ship.imgW / 2);
                 //shipRealPos.y = CS.pos.y + (ship.imgH / 2);
 
+                if (!met.met.alive) mets.Remove(met);
+
                 foreach (var bull in bulletsShoot.ToList()) {
 
                     if (!bull.Bala.alive) bulletsShoot.Remove(bull);
-                    
+
 
                     if (Vector2.Colliding(met.met.pos, bull.Bala.pos, met.met.rad - 4, bull.Bala.rad - 3)) {
                         bulletsShoot.Remove(bull);
                         mets.Remove(met);
                         points++;
                     }
-                    bull.Update();
+
 
                 }
 
-                if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) {
-                    //tempMetLostPos = met.GetMet().pos;  
-                    stage = GameStage.Lost;
-                }
-                met.Update();
+                if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) stage = GameStage.Lost;
             }
+        }
+
+        //static Vector2 tempMetLostPos;
+
+        static void Update() {
+            ship.Update();
+
+            foreach (var met in mets.ToList()) met.Update();
+            foreach (var bull in bulletsShoot.ToList()) bull.Update();
+
             //Engine.Debug("---");
         }
 
