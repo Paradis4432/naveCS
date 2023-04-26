@@ -9,10 +9,13 @@ namespace Game {
         public Cuerpo Nave { get; private set; }
         private Vector2 initialPos;
 
-        Animation cAnimation;
-        Animation foward;
-        Animation back;
-        Animation idle;
+        private Animation cAnimation;
+        private Animation foward;
+        private Animation back;
+        private Animation idle;
+        private Animation explote;
+
+        public bool exploded = false;
 
         private Ship(Vector2 initialPos) {
             this.initialPos = initialPos;
@@ -23,8 +26,9 @@ namespace Game {
             foward = AnimationsManager.CreateAnimation("foward", "ship_foward", 5, 20, false);
             back = AnimationsManager.CreateAnimation("back", "ship_backward", 5, 20, false);
             idle = AnimationsManager.CreateAnimation("idle", "ship_foward", 2, 1, false);
+            explote = AnimationsManager.CreateAnimation("explote", "ship_explote", 9, 30, false);
 
-            cAnimation = idle;
+            cAnimation = explote;
             cAnimation.Reset();
 
         }
@@ -54,6 +58,7 @@ namespace Game {
 
 
         public void Draw() {
+            if (!exploded) cAnimation = explote;
 
             if (Nave.alive) {
                 Engine.Debug(cAnimation.Id);
@@ -74,6 +79,8 @@ namespace Game {
         }
 
         public void Update() {
+            if (exploded) return;
+
             cAnimation.Update();
             
 
@@ -81,7 +88,7 @@ namespace Game {
             if (Engine.GetKey(Keys.D)) Rotate(+80);
             if (Engine.GetKey(Keys.W)) Move(false);
             else if (Engine.GetKey(Keys.S)) Move(true);
-            else {
+            else if (!exploded) {
                 cAnimation.Reset();
                 cAnimation = idle;
             }

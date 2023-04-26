@@ -136,7 +136,10 @@ namespace Game
 
                 }
 
-                //if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) stage = GameStage.Lost;
+                if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) {
+                    //stage = GameStage.Lost;
+                    ship.exploded = true;
+                }
             }
         }
 

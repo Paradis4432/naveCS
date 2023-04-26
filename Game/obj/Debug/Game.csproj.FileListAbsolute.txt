@@ -262,3 +262,11 @@ C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\
 C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_backward2.png
 C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_backward3.png
 C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_backward4.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote1.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote2.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote3.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote4.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote5.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote6.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote7.png
+C:\Users\Lucas\OneDrive\Documents\prog2023\ProyectoBase 19 del 4\Game\bin\Debug\ship_explote8.png
