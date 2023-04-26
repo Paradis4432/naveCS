@@ -5,16 +5,16 @@ using System.Numerics;
 
 namespace Game {
     public struct Meteors {
-        Cuerpo met;
-
+        public Cuerpo met { get; private set; }
+        private int rotateSpeed;
+        
         public Meteors(Vector2 navePos, Vector2 metPos) {
             met = new Cuerpo(metPos);
             met.dir = Vector2.Normalize(new Vector2(navePos.x - metPos.x,navePos.y - metPos.y));
             met.rad = 25;
+            rotateSpeed = new Random().Next(30);
         }
             
-        public Cuerpo GetThisMet() { return met; }
-
         public void Move() {
             Vector2 newPos;
             newPos.x = met.dir.x * met.speed;
@@ -32,7 +32,7 @@ namespace Game {
 
         public void Draw() {
             if (met.alive) Engine.Draw(Engine.GetTexture("meteor.png"),
-                met.pos.x, met.pos.y, 1, 1, 0, 12,12);
+                met.pos.x, met.pos.y, 1, 1, met.ang, 12,12);
 
             Engine.Draw(Engine.GetTexture("dotGREEN.png"), met.pos.x, met.pos.y, 2, 2);
         }
@@ -42,6 +42,8 @@ namespace Game {
             //Engine.Debug("updating met");
             //Engine.Debug(this.met.dir.x);
             //Engine.Debug(this.met.dir.y);
+            met.ang += rotateSpeed;
+            //Engine.Debug(rotateSpeed);
             Move();
             //nave.dir = new Vector2((float)Math.Cos(CalcRadians(nave.ang)),
              //   (float)Math.Sin(CalcRadians(nave.ang)));
@@ -67,8 +69,6 @@ namespace Game {
         private float CalcRadians(float ang) {
             return (float)(ang * Math.PI / 180f);
         }
-
-        public Cuerpo GetMet () { return  met; }
 
         public void Reset() {
             //nave.alive = true;
