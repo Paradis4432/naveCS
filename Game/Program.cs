@@ -9,12 +9,10 @@ namespace Game
 {
     /*
      * TODO:
-     * animaciones
      * agujero negro
      * agujero de gusano
      * UML
      * fix Delta time
-     * reset ship.png 
      * retroseso al disprar
      * cooldown para disparar
      * spawn random de met
@@ -138,7 +136,7 @@ namespace Game
 
                 }
 
-                if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) stage = GameStage.Lost;
+                //if (Vector2.Colliding(met.met.pos, CS.pos, met.met.rad - 4, CS.rad - 6)) stage = GameStage.Lost;
             }
         }
 
@@ -156,7 +154,7 @@ namespace Game
         static void Draw() {
             Engine.Clear();
 
-            //Engine.Draw(Engine.GetTexture("background.png"), 0, 0);
+            Engine.Draw(Engine.GetTexture("background.png"), 0, 0);
 
             ship.Draw();
             foreach (var met in mets.ToList()) {
