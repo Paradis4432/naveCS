@@ -44,15 +44,10 @@
 	<Compile Include="Cuerpo.cs" />
 	  <Compile Include="Meteors.cs" />
 	  <Compile Include="Bullet.cs" />
+	  <Compile Include="Animations.cs" />
   </ItemGroup>
   <ItemGroup>
-	<Content Include="ship.png">
-		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	</Content>
 	  <Content Include="bullet.png">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="ship1.png">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="meteorRED.png">
@@ -74,6 +69,30 @@
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="meteor.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_foward1.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_foward2.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_foward3.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_foward4.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_backward1.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_backward2.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_backward3.png">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="ship_backward4.png">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
     <Content Include="Engine.dll">

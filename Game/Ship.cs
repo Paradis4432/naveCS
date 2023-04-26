@@ -9,11 +9,24 @@ namespace Game {
         public Cuerpo Nave { get; private set; }
         private Vector2 initialPos;
 
+        Animation cAnimation;
+        Animation foward;
+        Animation back;
+        Animation idle;
+
         private Ship(Vector2 initialPos) {
             this.initialPos = initialPos;
             Nave = new Cuerpo(initialPos);
             Nave.speed = 0.2F;
             Nave.rad = 30;
+
+            foward = AnimationsManager.CreateAnimation("foward", "ship_foward", 5, 20, false);
+            back = AnimationsManager.CreateAnimation("back", "ship_backward", 5, 20, false);
+            idle = AnimationsManager.CreateAnimation("idle", "ship_foward", 2, 1, false);
+
+            cAnimation = idle;
+            cAnimation.Reset();
+
         }
 
         private static Ship instance;
@@ -24,19 +37,13 @@ namespace Game {
         }
 
         public void Move(bool backwards) {
-
-            //float radians = Mathf.Deg2Rad * ang;
-
-
-            //this.dir = new Vector2(Mathf.cos(r));
-            //Ship.pos.x += Ship.dir.x * speed;
-            //Ship.pos.y += Ship.dir.y * speed;
-
+            cAnimation = backwards ? back : foward;
             Vector2 newPos;
             newPos.x = Nave.dir.x * (backwards ? -Nave.speed : Nave.speed);
             newPos.y = Nave.dir.y * (backwards ? -Nave.speed : Nave.speed);
 
             Nave.AplicarFuerza(newPos);
+
         }
 
         public void Rotate(float toRotate) {
@@ -49,17 +56,11 @@ namespace Game {
         public void Draw() {
 
             if (Nave.alive) {
-                Engine.Draw(Engine.GetTexture("ship1.png"), Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 28, 23);
-
-                //Engine.Draw(Engine.GetTexture("ship.png"), Nave.pos.x, Nave.pos.y, 1, 1, 90, 28, 23);
-                //Engine.Draw(Engine.GetTexture("ship.png"), Nave.pos.x, Nave.pos.y, 1, 1, 180, 28, 23);
-                //Engine.Draw(Engine.GetTexture("ship.png"), Nave.pos.x, Nave.pos.y, 1, 1, 250, 28, 23);
-                //Engine.Draw(Engine.GetTexture("ship.png"), Nave.pos.x, Nave.pos.y, 1, 1, 360, 28, 23);
-                //Engine.Draw(Engine.GetTexture("ship.png"), Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 28, 23);
-
+                Engine.Debug(cAnimation.Id);
+                Engine.Draw(cAnimation.CurrentFrame, Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 28, 23);
             }
 
-            foreach (var bullet in Program.bulletsShoot)
+            foreach (var bullet in Program.bulletsShoot.ToList())
             {
                 bullet.Draw();
             }
@@ -69,15 +70,23 @@ namespace Game {
         }
 
         public void Shoot(int bullets) {
-            Engine.Debug("firing");
             Program.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
         }
 
         public void Update() {
+            cAnimation.Update();
+            
+
             if (Engine.GetKey(Keys.A)) Rotate(-80);
             if (Engine.GetKey(Keys.D)) Rotate(+80);
             if (Engine.GetKey(Keys.W)) Move(false);
-            if (Engine.GetKey(Keys.S)) Move(true);
+            else if (Engine.GetKey(Keys.S)) Move(true);
+            else {
+                cAnimation.Reset();
+                cAnimation = idle;
+            }
+
+
 
             if (Engine.GetKeyDown(Keys.F)) Shoot(1);
 
@@ -85,7 +94,6 @@ namespace Game {
 
             Nave.dir = new Vector2((float)Math.Cos(CalcRadians(Nave.ang)),
                 (float)Math.Sin(CalcRadians(Nave.ang)));
-
 
             //Nave.AplicarFriccion(1, 0.05f);
             Nave.CalcularFisica(1F);

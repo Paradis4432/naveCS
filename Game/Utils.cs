@@ -41,6 +41,22 @@ namespace Game
         }
     }
 
+    public struct AnimationsManager {
+        public static Animation CreateAnimation(string p_animationID, string p_path, int p_texturesAmount, float p_animationSpeed, bool loop) {
+            // Idle Animation
+            List<Texture> animationFrames = new List<Texture>();
+
+            for (int i = 1; i < p_texturesAmount; i++) {
+                Engine.Debug($"adding {p_path}{i}.png to {p_animationID}");
+                animationFrames.Add(Engine.GetTexture($"{p_path}{i}.png"));
+            }
+
+            Animation animation = new Animation(p_animationID, animationFrames, p_animationSpeed, loop);
+
+            return animation;
+        }
+    }
+
     public struct Transform
     {
         public Vector2 position;
