@@ -26,9 +26,9 @@ namespace Game {
             foward = AnimationsManager.CreateAnimation("foward", "ship_foward", 5, 20, false);
             back = AnimationsManager.CreateAnimation("back", "ship_backward", 5, 20, false);
             idle = AnimationsManager.CreateAnimation("idle", "ship_foward", 2, 1, false);
-            explote = AnimationsManager.CreateAnimation("explote", "ship_explote", 9, 30, false);
+            explote = AnimationsManager.CreateAnimation("explote", "ship_explote", 9, 15, false);
 
-            cAnimation = explote;
+            cAnimation = idle;
             cAnimation.Reset();
 
         }
@@ -58,7 +58,12 @@ namespace Game {
 
 
         public void Draw() {
-            if (!exploded) cAnimation = explote;
+
+            if (exploded)
+            {
+                cAnimation = explote;
+                Nave.vel = Vector2.zero;
+            }
 
             if (Nave.alive) {
                 Engine.Debug(cAnimation.Id);
@@ -75,12 +80,11 @@ namespace Game {
         }
 
         public void Shoot(int bullets) {
+            if (exploded) return;
             Program.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
         }
 
         public void Update() {
-            if (exploded) return;
-
             cAnimation.Update();
             
 
@@ -112,8 +116,7 @@ namespace Game {
         }
 
         public void Kill() {
-            Nave.alive = false;
-            Program.SetStage(GameStage.Lost);
+            exploded = true;
 
         }
 
@@ -136,6 +139,12 @@ namespace Game {
             Nave.vang = 0;
 
             Program.bulletsShoot = new List<Bullet>();
+
+            cAnimation.Reset();
+            cAnimation = idle;
+            
+            exploded = false;
+
         }
     }
 }

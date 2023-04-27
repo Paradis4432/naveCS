@@ -11,8 +11,6 @@ namespace Game
      * TODO:
      * agujero negro
      * agujero de gusano
-     * UML
-     * fix Delta time
      * retroseso al disprar
      * cooldown para disparar
      * spawn random de met
@@ -27,10 +25,8 @@ namespace Game
         static public List<Bullet> bulletsShoot = new List<Bullet>();
         static private int points = 0;
 
-
         static private System.Threading.Timer timer;
         static private System.Threading.Timer checkColls;
-
 
         static void Main(string[] args)
         {
@@ -43,6 +39,8 @@ namespace Game
             timer = new System.Threading.Timer(OnTimedEvent, null, 0, 1000);
             checkColls = new System.Threading.Timer(CheckColls, null, 0, 100);
 
+           
+
             while (true)
             {
                 switch (stage) {
@@ -50,16 +48,23 @@ namespace Game
                         Engine.Clear();
                         Engine.Draw(Engine.GetTexture("menu.png"), 0, 0, 1, 1, 0, 0, 0);
                         Engine.Show();
-
+    
                         if (!(Engine.GetKey(Keys.E))) continue;
                         stage = GameStage.Gameplay;
                         ship.Reset();
                         mets = new List<Meteors>();
                         secsCounter = 0;
-
                         break;
                     case GameStage.Gameplay:
-                        if (secsCounter >= 30) {
+
+                        if (Engine.GetKeyDown(Keys.R) && ship.exploded)
+                        {
+                            stage = GameStage.Menu;
+
+                            continue;
+                        }
+
+                        if (secsCounter >= 30 && !ship.exploded) {
                             stage = GameStage.Win;
                             break;
                         }
@@ -69,23 +74,6 @@ namespace Game
                         Update();
                         Draw();
                         
-                        break;
-                    case GameStage.Lost:
-                        Engine.Clear();
-
-                        //foreach (var met in mets) {
-                        //    met.Draw();
-                        //}
-
-                        //ship.Draw();
-
-                        //Engine.Draw(Engine.GetTexture("meteorRED.png"), tempMetLostPos.x, tempMetLostPos.y, 1,1,0,12,12);
-                        Engine.Draw(Engine.GetTexture("lost.png"), 0, 0);
-
-                        Engine.Show();
-
-                        if (Engine.GetKey(Keys.R)) stage = GameStage.Menu;
-
                         break;
                     case GameStage.Win:
                         Engine.Clear();
