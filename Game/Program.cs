@@ -146,6 +146,7 @@ namespace Game
             Engine.Clear();
 
             Engine.Draw(Engine.GetTexture("background.png"), 0, 0);
+            if(ship.exploded) Engine.Draw(Engine.GetTexture("lost.png"), 300, 100);
 
             ship.Draw();
             foreach (var met in mets.ToList()) {

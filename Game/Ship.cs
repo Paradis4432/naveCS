@@ -67,7 +67,7 @@ namespace Game {
 
             if (Nave.alive) {
                 Engine.Debug(cAnimation.Id);
-                Engine.Draw(cAnimation.CurrentFrame, Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 28, 23);
+                Engine.Draw(cAnimation.CurrentFrame, Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 35, 20);
             }
 
             foreach (var bullet in Program.bulletsShoot.ToList())
@@ -99,7 +99,7 @@ namespace Game {
 
 
 
-            if (Engine.GetKeyDown(Keys.F)) Shoot(1);
+            if (Engine.GetKeyDown(Keys.SPACE)) Shoot(1);
 
             if (Outside()) Kill();
 
