@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Media;
-using System.Numerics;
 
 namespace Game {
     public struct Meteors {
