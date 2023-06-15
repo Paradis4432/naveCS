@@ -15,6 +15,8 @@ namespace Game {
         private Animation idle;
         private Animation explote;
 
+        private GameManager gameManager = Program.getGameManager();
+
         public bool exploded = false;
 
         private Ship(Vector2 initialPos) {

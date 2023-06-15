@@ -18,23 +18,13 @@ namespace Game
     public class Program
     {
 
-        private static GameManager gameManager = null;
+        private static GameManager gameManager = new GameManager();
         static void Main(string[] args)
         {
             Engine.Initialize();
-            //stage = GameStage.Menu;
-            gameManager = new GameManager();
+            gameManager = gameManager.getInstance();
 
-
-            //ship = new Ship(new Vector2(375, 275));
-            //ship = Ship.GetInstance();
-
-            //timer = new System.Threading.Timer(OnTimedEvent, null, 0, 1000);
-            //checkColls = new System.Threading.Timer(CheckColls, null, 0, 100);
-
-           
-
-            while (gameManager.gameover)
+            while (!gameManager.gameover)
             {
                 switch (gameManager.getStage()) {
                     case GameStage.Menu:
