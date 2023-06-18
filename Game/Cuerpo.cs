@@ -61,9 +61,5 @@ namespace Game {
 
             AplicarFuerza(fric);
         }
-
-
     }
-
-
 }

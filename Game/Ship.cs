@@ -6,28 +6,25 @@ using System.Media;
 namespace Game
 {
     // aplicar singleton a Ship porque solo puede haber 1 Nave
-    public class Ship
+    public class Ship : Cuerpo
     {
-        public Cuerpo Nave { get; private set; }
+        // public Cuerpo Nave { get; private set; }
         private Vector2 initialPos;
-
         private Animation cAnimation;
         private Animation foward;
         private Animation back;
         private Animation idle;
         private Animation explote;
-
         // private static GameManager gameManager = Program.gameManager;
-
-
         public bool exploded = false;
 
-        private Ship(Vector2 initialPos)
+        private Ship(Vector2 initialPos) : base(initialPos)
         {
             this.initialPos = initialPos;
-            Nave = new Cuerpo(initialPos);
-            Nave.speed = 0.2F;
-            Nave.rad = 30;
+            // Nave = new Cuerpo(initialPos);
+            // en vez de llamar a cuerpo con initial pos lo heredamos con base(initialPos)
+            this.speed = 0.2F;
+            this.rad = 30;
 
             foward = AnimationsManager.CreateAnimation("foward", "ship_foward", 5, 20, false);
             back = AnimationsManager.CreateAnimation("back", "ship_backward", 5, 20, false);
@@ -51,64 +48,63 @@ namespace Game
         {
             cAnimation = backwards ? back : foward;
             Vector2 newPos;
-            newPos.x = Nave.dir.x * (backwards ? -Nave.speed : Nave.speed);
-            newPos.y = Nave.dir.y * (backwards ? -Nave.speed : Nave.speed);
+            newPos.x = this.dir.x * (backwards ? -this.speed : this.speed);
+            newPos.y = this.dir.y * (backwards ? -this.speed : this.speed);
 
-            Nave.AplicarFuerza(newPos);
+            this.AplicarFuerza(newPos);
 
         }
 
         public void Rotate(float toRotate)
         {
-            //Nave.ang += toRotate;
-            Nave.AplicarTorque(toRotate);
-
+            this.AplicarTorque(toRotate);
         }
 
 
         public void Draw()
         {
-            Console.WriteLine("ship draw debug 0");
+            if (Program.debug) Console.WriteLine("ship draw debug 0");
 
             if (exploded)
             {
-                Console.WriteLine("ship draw debug 1");
+                if (Program.debug) Console.WriteLine("ship draw debug 1");
                 cAnimation = explote;
-                Console.WriteLine("ship draw debug 2");
-                Nave.vel = Vector2.zero;
-                Console.WriteLine("ship draw debug 3");
+                if (Program.debug) Console.WriteLine("ship draw debug 2");
+                this.vel = Vector2.zero;
+                if (Program.debug) Console.WriteLine("ship draw debug 3");
             }
 
-            Console.WriteLine("ship draw debug 4");
+            if (Program.debug) Console.WriteLine("ship draw debug 4");
 
-            if (Nave.alive)
+            if (this.alive)
             {
-                Console.WriteLine("ship draw debug 5");
-                Engine.Debug(cAnimation.Id);
-                Console.WriteLine("ship draw debug 6");
-                Engine.Draw(Engine.GetTexture("ship_backward1.png"), Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 35, 20);
-                Console.WriteLine("ship draw debug 7");
+                if (Program.debug) Console.WriteLine("ship draw debug 5");
+                if (Program.debug) Engine.Debug(cAnimation.Id);
+                if (Program.debug) Console.WriteLine("ship draw debug 6");
+                Engine.Draw(cAnimation.CurrentFrame, this.pos.x, this.pos.y, 1, 1, this.ang, 35, 20);
+                if (Program.debug) Console.WriteLine("ship draw debug 7");
             }
 
-            Console.WriteLine("ship draw debug 8");
+            if (Program.debug) Console.WriteLine("ship draw debug 8");
 
             // foreach (var bullet in Program.gameManager.bulletsShoot.ToList())
             // {
-                // Console.WriteLine("ship draw debug 9");
+            if (Program.debug) // Console.WriteLine("ship draw debug 9");
                 // bullet.Draw();
-                // Console.WriteLine("ship draw debug 10");
-            // }
+                if (Program.debug) // Console.WriteLine("ship draw debug 10");
+                                   // }
 
-            Console.WriteLine("ship draw debug 11");
-            Engine.Draw(Engine.GetTexture("dotGREEN.png"), Nave.pos.x, Nave.pos.y, 2, 2);
-            Console.WriteLine("ship draw debug 12");
+                    if (Program.debug) Console.WriteLine("ship draw debug 11");
+            Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.pos.x, this.pos.y, 2, 2);
+            if (Program.debug) Console.WriteLine("ship draw debug 12");
         }
 
 
         public void Shoot(int bullets)
         {
+            if (Program.debug) Console.WriteLine("shoot");
             if (exploded) return;
-            // Program.gameManager.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
+            Program.gameManager.bulletsShoot.Add(new Bullet(this.pos, this.dir, this.ang));
         }
 
         public void Update()
@@ -132,17 +128,17 @@ namespace Game
 
             if (Outside()) Kill();
 
-            Nave.dir = new Vector2((float)Math.Cos(CalcRadians(Nave.ang)),
-                (float)Math.Sin(CalcRadians(Nave.ang)));
+            this.dir = new Vector2((float)Math.Cos(CalcRadians(this.ang)),
+                (float)Math.Sin(CalcRadians(this.ang)));
 
-            //Nave.AplicarFriccion(1, 0.05f);
-            Nave.CalcularFisica(1F);
+            //this.AplicarFriccion(1, 0.05f);
+            this.CalcularFisica(1F);
         }
 
         public bool Outside()
         {
-            return (Nave.pos.x > 800 - 25 || Nave.pos.x < 0 + 25 ||
-                Nave.pos.y > 600 - 25 || Nave.pos.y < 0 + 25);
+            return (this.pos.x > 800 - 25 || this.pos.x < 0 + 25 ||
+                this.pos.y > 600 - 25 || this.pos.y < 0 + 25);
         }
 
         public void Kill()
@@ -151,9 +147,9 @@ namespace Game
 
         }
 
-        public void SetAlive(bool b) { Nave.alive = b; }
+        public void SetAlive(bool b) { this.alive = b; }
 
-        // convierte en angulo en radian para girar la Nave en direccion 
+        // convierte en angulo en radian para girar la this en direccion 
         private float CalcRadians(float ang)
         {
             return (float)(ang * Math.PI / 180f);
@@ -161,15 +157,15 @@ namespace Game
 
         public void Reset()
         {
-            Nave.alive = true;
-            Nave.pos = initialPos;
-            Nave.ace = new Vector2(0, 0);
-            Nave.vel = new Vector2(0, 0);
-            Nave.dir = new Vector2(1, 0);
+            this.alive = true;
+            this.pos = initialPos;
+            this.ace = new Vector2(0, 0);
+            this.vel = new Vector2(0, 0);
+            this.dir = new Vector2(1, 0);
 
-            Nave.ang = 0;
-            Nave.aang = 0;
-            Nave.vang = 0;
+            this.ang = 0;
+            this.aang = 0;
+            this.vang = 0;
 
             // Program.gameManager.bulletsShoot = new List<Bullet>();
 
