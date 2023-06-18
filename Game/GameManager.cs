@@ -6,35 +6,37 @@ using System.Threading.Tasks;
 
 namespace Game
 {
-    
-    class GameManager {
+
+    public class GameManager
+    {
 
         public Ship ship;
-        Cuerpo shipCuerpo; // cuerpo de ship
-        private GameStage stage;
-        private int secsCounter = 0;
-        private List<Meteors> meteors = new List<Meteors>();
-        private List<Bullet> bulletsShoot = new List<Bullet>();
-        private int points = 0;
-        public Boolean gameover  = false;
-
-        static private System.Threading.Timer timer;
-        static private System.Threading.Timer checkColls;
-
-        private GameManager instance; 
-
         public Ship getShip() { return ship; }
+        Cuerpo shipCuerpo; // cuerpo de ship
+        public GameStage stage;
+        public int secsCounter = 0;
+        public List<Meteors> meteors = new List<Meteors>();
+        public List<Bullet> bulletsShoot = new List<Bullet>();
+        public int points = 0;
+        public Boolean gameover = false;
 
-        public GameManager getInstance()
+        static public System.Threading.Timer timer;
+        static public System.Threading.Timer checkColls;
+
+        public static GameManager gameManager = new GameManager();
+
+        public static GameManager GetGameManager()
         {
-            return this.instance;
+            Engine.Debug("test");
+            Console.WriteLine(gameManager);
+            Engine.Debug(gameManager == null);
+            return gameManager;
         }
 
         public GameManager()
         {
-            this.instance = this;
 
-            this.ship = Ship.GetInstance();
+            ship = Ship.GetInstance();
             timer = new System.Threading.Timer(OnTimedEvent, null, 0, 1000);
             checkColls = new System.Threading.Timer(CheckColls, null, 0, 100);
 
@@ -60,28 +62,42 @@ namespace Game
         }
         public void resetValues()
         {
+            Console.WriteLine("debug0");
             stage = GameStage.Gameplay;
+            Console.WriteLine("debug1");
             ship.Reset();
+            Console.WriteLine("debug2");
             meteors = new List<Meteors>();
+            Console.WriteLine("debug3");
             secsCounter = 0;
+            Console.WriteLine("debug4");
         }
 
         public void updateGameplay()
         {
+            Console.WriteLine("debug0.1");
+
             if (secsCounter >= 30 && !ship.exploded)
             {
+                Console.WriteLine("debug0.2");
+
                 stage = GameStage.Win;
                 this.gameover = true;
             }
             //Engine.Debug(mets.Count);
+            Console.WriteLine("debug1.1");
 
             shipCuerpo = ship.Nave;
+            Console.WriteLine("debug1.2");
             Update();
+            Console.WriteLine("debug2");
             Draw();
+            Console.WriteLine("debug3");
 
         }
 
-        public void setStage(GameStage newStage) {
+        public void setStage(GameStage newStage)
+        {
             this.stage = newStage;
         }
 
@@ -89,7 +105,7 @@ namespace Game
         {
             return this.stage;
         }
-            
+
 
         private void OnTimedEvent(Object stateInfo)
         {
@@ -148,11 +164,16 @@ namespace Game
         void Draw()
         {
             Engine.Clear();
+            Console.WriteLine("debug4.1");
 
             Engine.Draw(Engine.GetTexture("background.png"), 0, 0);
+            Console.WriteLine("debug4.2");
+
             if (ship.exploded) Engine.Draw(Engine.GetTexture("lost.png"), 300, 100);
 
+            Console.WriteLine("debug4.3");
             ship.Draw();
+            Console.WriteLine("debug4.4");
             foreach (var met in meteors.ToList())
             {
                 met.Draw();

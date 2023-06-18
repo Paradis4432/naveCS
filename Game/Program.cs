@@ -18,21 +18,23 @@ namespace Game
     public class Program
     {
 
-        private static GameManager gameManager = new GameManager();
+        public static GameManager gameManager = GameManager.GetGameManager();
+
         static void Main(string[] args)
         {
+            Console.WriteLine(gameManager);
             Engine.Initialize();
-            gameManager = gameManager.getInstance();
 
             while (!gameManager.gameover)
             {
-                switch (gameManager.getStage()) {
+                switch (gameManager.getStage())
+                {
                     case GameStage.Menu:
                         gameManager.updateMenu();
                         if (!(Engine.GetKey(Keys.E))) continue;
                         gameManager.resetValues();
                         break;
-                        
+
                     case GameStage.Gameplay:
                         if (Engine.GetKeyDown(Keys.R) && gameManager.getShip().exploded)
                         {
@@ -42,14 +44,14 @@ namespace Game
                             continue;
                         }
                         gameManager.updateGameplay();
-                        
+
                         break;
                     case GameStage.Win:
                         gameManager.updateWin();
 
 
                         break;
-                        
+
                 }
 
             }

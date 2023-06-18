@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 
-namespace Game {
+namespace Game
+{
     // aplicar singleton a Ship porque solo puede haber 1 Nave
-    public class Ship {
+    public class Ship
+    {
         public Cuerpo Nave { get; private set; }
         private Vector2 initialPos;
 
@@ -15,11 +17,13 @@ namespace Game {
         private Animation idle;
         private Animation explote;
 
-        private GameManager gameManager = Program.getGameManager();
+        // private static GameManager gameManager = Program.gameManager;
+
 
         public bool exploded = false;
 
-        private Ship(Vector2 initialPos) {
+        private Ship(Vector2 initialPos)
+        {
             this.initialPos = initialPos;
             Nave = new Cuerpo(initialPos);
             Nave.speed = 0.2F;
@@ -37,12 +41,14 @@ namespace Game {
 
         private static Ship instance;
 
-        public static Ship GetInstance() {
+        public static Ship GetInstance()
+        {
             if (instance == null) { instance = new Ship(new Vector2(375, 275)); }
             return instance;
         }
 
-        public void Move(bool backwards) {
+        public void Move(bool backwards)
+        {
             cAnimation = backwards ? back : foward;
             Vector2 newPos;
             newPos.x = Nave.dir.x * (backwards ? -Nave.speed : Nave.speed);
@@ -52,49 +58,70 @@ namespace Game {
 
         }
 
-        public void Rotate(float toRotate) {
+        public void Rotate(float toRotate)
+        {
             //Nave.ang += toRotate;
             Nave.AplicarTorque(toRotate);
 
         }
 
 
-        public void Draw() {
+        public void Draw()
+        {
+            Console.WriteLine("ship draw debug 0");
 
             if (exploded)
             {
+                Console.WriteLine("ship draw debug 1");
                 cAnimation = explote;
+                Console.WriteLine("ship draw debug 2");
                 Nave.vel = Vector2.zero;
+                Console.WriteLine("ship draw debug 3");
             }
 
-            if (Nave.alive) {
-                Engine.Debug(cAnimation.Id);
-                Engine.Draw(cAnimation.CurrentFrame, Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 35, 20);
-            }
+            Console.WriteLine("ship draw debug 4");
 
-            foreach (var bullet in Program.bulletsShoot.ToList())
+            if (Nave.alive)
             {
-                bullet.Draw();
+                Console.WriteLine("ship draw debug 5");
+                Engine.Debug(cAnimation.Id);
+                Console.WriteLine("ship draw debug 6");
+                Engine.Draw(Engine.GetTexture("ship_backward1.png"), Nave.pos.x, Nave.pos.y, 1, 1, Nave.ang, 35, 20);
+                Console.WriteLine("ship draw debug 7");
             }
 
+            Console.WriteLine("ship draw debug 8");
+
+            foreach (var bullet in Program.gameManager.bulletsShoot.ToList())
+            {
+                Console.WriteLine("ship draw debug 9");
+                bullet.Draw();
+                Console.WriteLine("ship draw debug 10");
+            }
+
+            Console.WriteLine("ship draw debug 11");
             Engine.Draw(Engine.GetTexture("dotGREEN.png"), Nave.pos.x, Nave.pos.y, 2, 2);
-
+            Console.WriteLine("ship draw debug 12");
         }
 
-        public void Shoot(int bullets) {
+
+        public void Shoot(int bullets)
+        {
             if (exploded) return;
-            Program.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
+            Program.gameManager.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
         }
 
-        public void Update() {
+        public void Update()
+        {
             cAnimation.Update();
-            
+
 
             if (Engine.GetKey(Keys.A)) Rotate(-80);
             if (Engine.GetKey(Keys.D)) Rotate(+80);
             if (Engine.GetKey(Keys.W)) Move(false);
             else if (Engine.GetKey(Keys.S)) Move(true);
-            else if (!exploded) {
+            else if (!exploded)
+            {
                 cAnimation.Reset();
                 cAnimation = idle;
             }
@@ -112,12 +139,14 @@ namespace Game {
             Nave.CalcularFisica(1F);
         }
 
-        public bool Outside() {
+        public bool Outside()
+        {
             return (Nave.pos.x > 800 - 25 || Nave.pos.x < 0 + 25 ||
                 Nave.pos.y > 600 - 25 || Nave.pos.y < 0 + 25);
         }
 
-        public void Kill() {
+        public void Kill()
+        {
             exploded = true;
 
         }
@@ -125,11 +154,13 @@ namespace Game {
         public void SetAlive(bool b) { Nave.alive = b; }
 
         // convierte en angulo en radian para girar la Nave en direccion 
-        private float CalcRadians(float ang) {
+        private float CalcRadians(float ang)
+        {
             return (float)(ang * Math.PI / 180f);
         }
 
-        public void Reset() {
+        public void Reset()
+        {
             Nave.alive = true;
             Nave.pos = initialPos;
             Nave.ace = new Vector2(0, 0);
@@ -140,11 +171,11 @@ namespace Game {
             Nave.aang = 0;
             Nave.vang = 0;
 
-            Program.bulletsShoot = new List<Bullet>();
+            Program.gameManager.bulletsShoot = new List<Bullet>();
 
             cAnimation.Reset();
             cAnimation = idle;
-            
+
             exploded = false;
 
         }
