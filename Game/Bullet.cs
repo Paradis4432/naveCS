@@ -2,64 +2,71 @@ using System;
 using System.Collections.Generic;
 using System.Media;
 
-namespace Game {
-    public class Bullet {
-        public Cuerpo Bala { get; private set; }
-
-        public Bullet(Vector2 initialPos, Vector2 dir, float ang) {
-            Bala = new Cuerpo(initialPos);
-            Bala.ang = ang; 
-            Bala.dir = dir; 
-            Bala.speed = 3F;
-            Bala.rad = 5;
+namespace Game
+{
+    public class Bullet : Cuerpo
+    {
+        public Bullet(Vector2 initialPos, Vector2 dir, float ang) : base(initialPos)
+        {
+            this.ang = ang;
+            this.dir = dir;
+            this.speed = 3F;
+            this.rad = 5;
         }
 
-        public void Move() {
+        public void Move()
+        {
 
             Vector2 newPos;
-            newPos.x = Bala.dir.x * Bala.speed;
-            newPos.y = Bala.dir.y * Bala.speed;
+            newPos.x = this.dir.x * this.speed;
+            newPos.y = this.dir.y * this.speed;
 
-            Bala.AplicarAceleracion(newPos);
+            this.AplicarAceleracion(newPos);
 
         }
 
-        public void Draw() {
+        public void Draw()
+        {
 
-            if (Bala.alive) {
+            if (this.alive)
+            {
                 // add offset 
-                Engine.Draw(Engine.GetTexture("bullet.png"), Bala.pos.x, Bala.pos.y, 1, 1, Bala.ang, 0,0);
+                Engine.Draw(Engine.GetTexture("bullet.png"), this.pos.x, this.pos.y, 1, 1, this.ang, 0, 0);
             }
 
-            Engine.Draw(Engine.GetTexture("dotGREEN.png"), Bala.pos.x, Bala.pos.y, 2, 2);
+            Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.pos.x, this.pos.y, 2, 2);
 
         }
 
-        public void Update() {
-            
+        public void Update()
+        {
             if (Outside()) Kill();
-
             Move();
-
-            //Engine.Debug("updating bullet dirx: " + Bala.dir.x);
-            //Engine.Debug("updating bullet diry: " + Bala.dir.y);
-            //Engine.Debug("updating bullet speed: " + Bala.speed);
-            //Engine.Debug("updating bullet posx: " + Bala.pos.x);
-            //Engine.Debug("updating bullet posy: " + Bala.pos.y);
-
-            //Nave.AplicarFriccion(1, 0.05f);
-            Bala.CalcularFisica(1F);
+            this.CalcularFisica(1F);
         }
 
-        public bool Outside() {
-            return (Bala.pos.x > 1000 ||
-                Bala.pos.x < 0 ||
-                Bala.pos.y > 1000 ||
-                Bala.pos.y < 0);
+        public bool Outside()
+        {
+            return (this.pos.x > 1000 ||
+                this.pos.x < 0 ||
+                this.pos.y > 1000 ||
+                this.pos.y < 0);
         }
 
-        public void Kill() {
-            Bala.alive = false;
+        public void Kill()
+        {
+            this.alive = false;
+            GameManager.bulletPool.Return(this);
+        }
+
+        public void Reinitialize(Vector2 position, Vector2 direction, float angle)
+        {
+            // Reset bullet's state
+            this.pos = position;
+            this.dir = direction;
+            this.ang = angle;
+            this.alive = true;
+            this.speed = 3;
         }
 
     }
