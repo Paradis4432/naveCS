@@ -21,13 +21,14 @@ namespace Game
         // public static GameManager gameManager = GameManager.GetGameManager();
 
         public static GameManager gameManager;
+        public static bool debug = false;
 
         public static GameManager GetGameManager()
         {
-            Engine.Debug("test");
+            if (debug) Engine.Debug("test");
             if (gameManager == null) gameManager = new GameManager();
-            Console.WriteLine(gameManager);
-            Engine.Debug(gameManager == null);
+            if (debug) Console.WriteLine(gameManager);
+            if (debug) Engine.Debug(gameManager == null);
 
             return gameManager;
         }

@@ -12,7 +12,7 @@ namespace Game
 
         public Ship ship;
         public Ship getShip() { return ship; }
-        Cuerpo shipCuerpo; // cuerpo de ship
+        // Cuerpo shipCuerpo; // cuerpo de ship // ya no es necesario tener cuerpo, ship hereda de cuerpo
         public GameStage stage;
         public int secsCounter = 0;
         public List<Meteors> meteors = new List<Meteors>();
@@ -23,7 +23,7 @@ namespace Game
         static public System.Threading.Timer timer;
         static public System.Threading.Timer checkColls;
 
-        
+
 
         public GameManager()
         {
@@ -67,24 +67,23 @@ namespace Game
 
         public void updateGameplay()
         {
-            Console.WriteLine("debug0.1");
+            if (Program.debug) Console.WriteLine("debug0.1");
 
             if (secsCounter >= 30 && !ship.exploded)
             {
-                Console.WriteLine("debug0.2");
+                if (Program.debug) Console.WriteLine("debug0.2");
 
                 stage = GameStage.Win;
                 this.gameover = true;
             }
             //Engine.Debug(mets.Count);
-            Console.WriteLine("debug1.1");
+            if (Program.debug) Console.WriteLine("debug1.1");
 
-            shipCuerpo = ship.Nave;
-            Console.WriteLine("debug1.2");
+            if (Program.debug) Console.WriteLine("debug1.2");
             Update();
-            Console.WriteLine("debug2");
+            if (Program.debug) Console.WriteLine("debug2");
             Draw();
-            Console.WriteLine("debug3");
+            if (Program.debug) Console.WriteLine("debug3");
 
         }
 
@@ -103,7 +102,7 @@ namespace Game
         {
             if (stage != GameStage.Gameplay) return;
 
-            meteors.Add(new Meteors(shipCuerpo.pos, new Vector2(50, 1)));
+            meteors.Add(new Meteors(ship.pos, new Vector2(50, 1)));
             secsCounter++;
         }
 
@@ -135,7 +134,7 @@ namespace Game
 
                 }
 
-                if (Vector2.Colliding(met.met.pos, shipCuerpo.pos, met.met.rad - 4, shipCuerpo.rad - 6))
+                if (Vector2.Colliding(met.met.pos, ship.pos, met.met.rad - 4, ship.rad - 6))
                 {
                     //stage = GameStage.Lost;
                     ship.exploded = true;
@@ -156,20 +155,25 @@ namespace Game
         void Draw()
         {
             Engine.Clear();
-            Console.WriteLine("debug4.1");
+            if (Program.debug) Console.WriteLine("debug4.1");
 
             Engine.Draw(Engine.GetTexture("background.png"), 0, 0);
-            Console.WriteLine("debug4.2");
+            if (Program.debug) Console.WriteLine("debug4.2");
 
             if (ship.exploded) Engine.Draw(Engine.GetTexture("lost.png"), 300, 100);
 
-            Console.WriteLine("debug4.3");
+            if (Program.debug) Console.WriteLine("debug4.3");
             ship.Draw();
-            Console.WriteLine("debug4.4");
+            if (Program.debug) Console.WriteLine("debug4.4");
             foreach (var met in meteors.ToList())
             {
                 met.Draw();
             }
+            foreach (var bull in bulletsShoot.ToList())
+            {
+                bull.Draw();
+            }
+            
 
             Engine.Show();
         }
