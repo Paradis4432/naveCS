@@ -9,8 +9,6 @@ namespace Game
 {
     /*
      * TODO:
-     * agujero negro
-     * agujero de gusano
      * retroseso al disprar
      * cooldown para disparar
      * spawn random de met

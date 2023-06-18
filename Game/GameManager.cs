@@ -107,7 +107,7 @@ namespace Game
             // spawn a meteor of random type
             int rand = new Random().Next(3);
 
-            meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType)rand));
+            meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType) rand));
 
             secsCounter++;
         }
@@ -122,7 +122,7 @@ namespace Game
                 //shipRealPos.x = CS.pos.x + (ship.imgW / 2);
                 //shipRealPos.y = CS.pos.y + (ship.imgH / 2);
 
-                if (!met.met.alive) meteors.Remove(met);
+                if (!met.alive) meteors.Remove(met);
 
                 foreach (var bull in bulletsShoot.ToList())
                 {
@@ -130,7 +130,7 @@ namespace Game
                     if (!bull.Bala.alive) bulletsShoot.Remove(bull);
 
 
-                    if (Vector2.Colliding(met.met.pos, bull.Bala.pos, met.met.rad * 25 - 4, bull.Bala.rad * 25 - 3))
+                    if (Vector2.Colliding(met.pos, bull.Bala.pos, met.rad * 7 - 4, bull.Bala.rad * 7 - 3))
                     {
                         bulletsShoot.Remove(bull);
                         meteors.Remove(met);
@@ -140,7 +140,7 @@ namespace Game
 
                 }
 
-                if (Vector2.Colliding(met.met.pos, ship.pos, met.met.rad - 4, ship.rad - 6))
+                if (Vector2.Colliding(met.pos, ship.pos, met.rad - 4, ship.rad - 6))
                 {
                     //stage = GameStage.Lost;
                     ship.exploded = true;
