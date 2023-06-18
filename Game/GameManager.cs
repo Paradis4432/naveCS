@@ -102,7 +102,13 @@ namespace Game
         {
             if (stage != GameStage.Gameplay) return;
 
-            meteors.Add(new Meteors(ship.pos, new Vector2(50, 1)));
+            // meteors.Add(new Meteors(ship.pos, new Vector2(50, 1)));
+
+            // spawn a meteor of random type
+            int rand = new Random().Next(3);
+
+            meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType)rand));
+
             secsCounter++;
         }
 
@@ -124,7 +130,7 @@ namespace Game
                     if (!bull.Bala.alive) bulletsShoot.Remove(bull);
 
 
-                    if (Vector2.Colliding(met.met.pos, bull.Bala.pos, met.met.rad - 4, bull.Bala.rad - 3))
+                    if (Vector2.Colliding(met.met.pos, bull.Bala.pos, met.met.rad * 25 - 4, bull.Bala.rad * 25 - 3))
                     {
                         bulletsShoot.Remove(bull);
                         meteors.Remove(met);
