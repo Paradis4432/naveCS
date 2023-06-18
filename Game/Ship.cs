@@ -113,8 +113,6 @@ namespace Game
             Bullet bullet = GameManager.bulletPool.Get(this.pos, this.dir, this.ang);
             if (Program.debug1) Console.WriteLine("shoot 3");
             GameManager.bulletPool.AddActiveBullet(bullet);
-
-
         }
 
         public void Update()

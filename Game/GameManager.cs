@@ -24,8 +24,6 @@ namespace Game
         static public System.Threading.Timer checkColls;
         static public BulletPool bulletPool = new BulletPool();
 
-
-
         public GameManager()
         {
 
@@ -108,8 +106,7 @@ namespace Game
             // spawn a meteor of random type
             int rand = new Random().Next(3);
 
-            meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType)rand));
-
+            meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType) rand));
             secsCounter++;
         }
 
@@ -193,8 +190,6 @@ namespace Game
             {
                 bull.Draw();
             }
-
-
             Engine.Show();
         }
 
