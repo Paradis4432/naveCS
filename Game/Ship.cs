@@ -102,9 +102,17 @@ namespace Game
 
         public void Shoot(int bullets)
         {
-            if (Program.debug) Console.WriteLine("shoot");
+            if (Program.debug1) Console.WriteLine("shoot");
             if (exploded) return;
-            Program.gameManager.bulletsShoot.Add(new Bullet(this.pos, this.dir, this.ang));
+            // Program.gameManager.bulletsShoot.Add(new Bullet(this.pos, this.dir, this.ang));
+            if (Program.debug1) Console.WriteLine("shoot 2");
+            // Program.gameManager.bulletsShoot.Add(GameManager.bulletPool.Get(this.pos, this.dir, this.ang));
+
+            // Program.gameManager.bulletPool.(this.pos, this.dir, this.ang);
+            // GameManager.bulletPool.Get(this.pos, this.dir, this.ang);
+            Bullet bullet = GameManager.bulletPool.Get(this.pos, this.dir, this.ang);
+            if (Program.debug1) Console.WriteLine("shoot 3");
+            GameManager.bulletPool.AddActiveBullet(bullet);
         }
 
         public void Update()

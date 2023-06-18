@@ -47,6 +47,7 @@
     <Compile Include="Meteors.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Animations.cs" />
+    <Compile Include="BulletPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bullet.png">

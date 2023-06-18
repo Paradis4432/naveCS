@@ -16,14 +16,13 @@ namespace Game
         public GameStage stage;
         public int secsCounter = 0;
         public List<Meteors> meteors = new List<Meteors>();
-        public List<Bullet> bulletsShoot = new List<Bullet>();
+        // public List<Bullet> bulletsShoot = new List<Bullet>();
         public int points = 0;
         public Boolean gameover = false;
 
         static public System.Threading.Timer timer;
         static public System.Threading.Timer checkColls;
-
-
+        static public BulletPool bulletPool = new BulletPool();
 
         public GameManager()
         {
@@ -108,14 +107,15 @@ namespace Game
             int rand = new Random().Next(3);
 
             meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType) rand));
-
             secsCounter++;
         }
 
         private void CheckColls(Object stateInfo)
         {
+            List<Meteors> copy;
+            copy = new List<Meteors>(meteors);
             // update every 100 mils
-            foreach (var met in meteors.ToList())
+            foreach (var met in copy)
             {
                 // if any met is colliding with ship.pos
                 //Vector2 shipRealPos = new Vector2(0,0);
@@ -124,15 +124,18 @@ namespace Game
 
                 if (!met.alive) meteors.Remove(met);
 
-                foreach (var bull in bulletsShoot.ToList())
+                List<Bullet> bulletsToReturn = new List<Bullet>();
+                foreach (var bull in bulletPool.activeBullets.ToList())
                 {
 
-                    if (!bull.Bala.alive) bulletsShoot.Remove(bull);
+                    // if (!bull.alive) bulletsShoot.Remove(bull);
+                    if (!bull.alive) bulletsToReturn.Add(bull);
 
 
-                    if (Vector2.Colliding(met.pos, bull.Bala.pos, met.rad * 7 - 4, bull.Bala.rad * 7 - 3))
+                    if (Vector2.Colliding(met.pos, bull.pos, met.rad * 7 - 4, bull.rad * 7 - 3))
                     {
-                        bulletsShoot.Remove(bull);
+                        // bulletsShoot.Remove(bull);
+                        bulletsToReturn.Add(bull);
                         meteors.Remove(met);
                         points++;
                     }
@@ -145,7 +148,15 @@ namespace Game
                     //stage = GameStage.Lost;
                     ship.exploded = true;
                 }
+
+
+                foreach (var bull in bulletsToReturn)
+                {
+                    bulletPool.Return(bull);
+                }
             }
+
+
         }
 
         void Update()
@@ -153,7 +164,7 @@ namespace Game
             ship.Update();
 
             foreach (var met in meteors.ToList()) met.Update();
-            foreach (var bull in bulletsShoot.ToList()) bull.Update();
+            foreach (var bull in bulletPool.activeBullets.ToList()) bull.Update();
 
             //Engine.Debug("---");
         }
@@ -175,12 +186,10 @@ namespace Game
             {
                 met.Draw();
             }
-            foreach (var bull in bulletsShoot.ToList())
+            foreach (var bull in bulletPool.activeBullets.ToList())
             {
                 bull.Draw();
             }
-            
-
             Engine.Show();
         }
 

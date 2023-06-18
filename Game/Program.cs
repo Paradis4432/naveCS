@@ -20,6 +20,7 @@ namespace Game
 
         public static GameManager gameManager;
         public static bool debug = false;
+        public static bool debug1 = true;
 
         public static GameManager GetGameManager()
         {

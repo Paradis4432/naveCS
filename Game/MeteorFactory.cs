@@ -16,17 +16,17 @@ namespace Game
             {
                 case MeteorType.Normal:
                     met.rad = 1;
-                    met.speed = 0.4F;
+                    met.speed = 0.8F;
                     met.rotateSpeed = new Random().Next(30);
                     break;
                 case MeteorType.Big:
                     met.rad = 2;
-                    met.speed = 0.2F;
+                    met.speed = 0.4F;
                     met.rotateSpeed = new Random().Next(10);
                     break;
                 case MeteorType.Small:
                     met.rad = 0.5f;
-                    met.speed = 0.6F;
+                    met.speed = 1.2F;
                     met.rotateSpeed = new Random().Next(50);
                     break;
             }
