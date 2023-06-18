@@ -16,7 +16,7 @@ namespace Game {
         public float masa { get; set; }
         public bool alive { get; set; }
         public float speed { get; set; }
-        public int rad { get; set; }
+        public float rad { get; set; }
 
         public Cuerpo(Vector2 pos) {
             this.pos = pos;
