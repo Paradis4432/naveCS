@@ -23,15 +23,7 @@ namespace Game
         static public System.Threading.Timer timer;
         static public System.Threading.Timer checkColls;
 
-        public static GameManager gameManager = new GameManager();
-
-        public static GameManager GetGameManager()
-        {
-            Engine.Debug("test");
-            Console.WriteLine(gameManager);
-            Engine.Debug(gameManager == null);
-            return gameManager;
-        }
+        
 
         public GameManager()
         {

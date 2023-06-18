@@ -18,42 +18,52 @@ namespace Game
     public class Program
     {
 
-        public static GameManager gameManager = GameManager.GetGameManager();
+        // public static GameManager gameManager = GameManager.GetGameManager();
+
+        public static GameManager gameManager;
+
+        public static GameManager GetGameManager()
+        {
+            Engine.Debug("test");
+            if (gameManager == null) gameManager = new GameManager();
+            Console.WriteLine(gameManager);
+            Engine.Debug(gameManager == null);
+
+            return gameManager;
+        }
 
         static void Main(string[] args)
         {
-            Console.WriteLine(gameManager);
             Engine.Initialize();
 
-            while (!gameManager.gameover)
+            while (!GetGameManager().gameover)
             {
-                switch (gameManager.getStage())
+                switch (GetGameManager().getStage())
                 {
                     case GameStage.Menu:
-                        gameManager.updateMenu();
+                        GetGameManager().updateMenu();
                         if (!(Engine.GetKey(Keys.E))) continue;
-                        gameManager.resetValues();
+                        GetGameManager().resetValues();
                         break;
 
                     case GameStage.Gameplay:
-                        if (Engine.GetKeyDown(Keys.R) && gameManager.getShip().exploded)
+                        if (Engine.GetKeyDown(Keys.R) && GetGameManager().getShip().exploded)
                         {
                             //stage = GameStage.Menu;
-                            gameManager.setStage(GameStage.Menu);
+                            GetGameManager().setStage(GameStage.Menu);
 
                             continue;
                         }
-                        gameManager.updateGameplay();
+                        GetGameManager().updateGameplay();
 
                         break;
                     case GameStage.Win:
-                        gameManager.updateWin();
+                        GetGameManager().updateWin();
 
 
                         break;
 
                 }
-
             }
         }
     }

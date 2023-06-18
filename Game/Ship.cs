@@ -92,12 +92,12 @@ namespace Game
 
             Console.WriteLine("ship draw debug 8");
 
-            foreach (var bullet in Program.gameManager.bulletsShoot.ToList())
-            {
-                Console.WriteLine("ship draw debug 9");
-                bullet.Draw();
-                Console.WriteLine("ship draw debug 10");
-            }
+            // foreach (var bullet in Program.gameManager.bulletsShoot.ToList())
+            // {
+                // Console.WriteLine("ship draw debug 9");
+                // bullet.Draw();
+                // Console.WriteLine("ship draw debug 10");
+            // }
 
             Console.WriteLine("ship draw debug 11");
             Engine.Draw(Engine.GetTexture("dotGREEN.png"), Nave.pos.x, Nave.pos.y, 2, 2);
@@ -108,7 +108,7 @@ namespace Game
         public void Shoot(int bullets)
         {
             if (exploded) return;
-            Program.gameManager.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
+            // Program.gameManager.bulletsShoot.Add(new Bullet(Nave.pos, Nave.dir, Nave.ang));
         }
 
         public void Update()
@@ -171,7 +171,7 @@ namespace Game
             Nave.aang = 0;
             Nave.vang = 0;
 
-            Program.gameManager.bulletsShoot = new List<Bullet>();
+            // Program.gameManager.bulletsShoot = new List<Bullet>();
 
             cAnimation.Reset();
             cAnimation = idle;
