@@ -106,7 +106,7 @@ namespace Game
             // spawn a meteor of random type
             int rand = new Random().Next(3);
 
-            meteors.Add(MeteorFactory.CreateMeteor(ship.pos, new Vector2(50, 1), (MeteorType) rand));
+            meteors.Add(MeteorFactory.CreateMeteor(ship.transform.getPosition(), new Vector2(50, 1), (MeteorType) rand));
             secsCounter++;
         }
 
@@ -117,10 +117,10 @@ namespace Game
             // update every 100 mils
             foreach (var met in copy)
             {
-                // if any met is colliding with ship.pos
-                //Vector2 shipRealPos = new Vector2(0,0);
-                //shipRealPos.x = CS.pos.x + (ship.imgW / 2);
-                //shipRealPos.y = CS.pos.y + (ship.imgH / 2);
+                // if any met is colliding with ship.transform.getPosition()
+                //Vector2 transform.shipRealgetPosition() = new Vector2(0,0);
+                //transform.shipRealgetPosition().x = CS.transform.getPosition().x + (ship.imgW / 2);
+                //transform.shipRealgetPosition().y = CS.transform.getPosition().y + (ship.imgH / 2);
 
                 if (!met.alive) meteors.Remove(met);
 
@@ -132,7 +132,7 @@ namespace Game
                     if (!bull.alive) bulletsToReturn.Add(bull);
 
 
-                    if (Vector2.Colliding(met.pos, bull.pos, met.rad * 7 - 4, bull.rad * 7 - 3))
+                    if (Vector2.Colliding(met.transform.getPosition(), bull.transform.getPosition(), met.rad * 7 - 4, bull.rad * 7 - 3))
                     {
                         // bulletsShoot.Remove(bull);
                         bulletsToReturn.Add(bull);
@@ -143,7 +143,7 @@ namespace Game
 
                 }
 
-                if (Vector2.Colliding(met.pos, ship.pos, met.rad - 4, ship.rad - 6))
+                if (Vector2.Colliding(met.transform.getPosition(), ship.transform.getPosition(), met.rad - 4, ship.rad - 6))
                 {
                     //stage = GameStage.Lost;
                     ship.exploded = true;

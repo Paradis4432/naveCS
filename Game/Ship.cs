@@ -9,7 +9,8 @@ namespace Game
     public class Ship : Cuerpo
     {
         // public Cuerpo Nave { get; private set; }
-        private Vector2 initialPos;
+        // private Vector2 initialPos;
+        public Vector2 initialPos;
         private Animation cAnimation;
         private Animation foward;
         private Animation back;
@@ -22,7 +23,7 @@ namespace Game
         {
             this.initialPos = initialPos;
             // Nave = new Cuerpo(initialPos);
-            // en vez de llamar a cuerpo con initial pos lo heredamos con base(initialPos)
+            // en vez de llamar a cuerpo con initial transform.getPosition() lo heredamos con base(initialPos)
             this.speed = 0.2F;
             this.rad = 30;
 
@@ -81,7 +82,8 @@ namespace Game
                 if (Program.debug) Console.WriteLine("ship draw debug 5");
                 if (Program.debug) Engine.Debug(cAnimation.Id);
                 if (Program.debug) Console.WriteLine("ship draw debug 6");
-                Engine.Draw(cAnimation.CurrentFrame, this.pos.x, this.pos.y, 1, 1, this.ang, 35, 20);
+                Engine.Draw(cAnimation.CurrentFrame, this.transform.getPosition().x, this.transform.getPosition().y, 1, 1, this.transform.getRotation(), 35, 20);
+                Engine.Draw(cAnimation.CurrentFrame, this.transform.getPosition().x, this.transform.getPosition().y, 1, 1, this.transform.getRotation(), 35, 20);
                 if (Program.debug) Console.WriteLine("ship draw debug 7");
             }
 
@@ -95,7 +97,7 @@ namespace Game
                                    // }
 
                     if (Program.debug) Console.WriteLine("ship draw debug 11");
-            Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.pos.x, this.pos.y, 2, 2);
+            Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.transform.getPosition().x, this.transform.getPosition().y, 2, 2);
             if (Program.debug) Console.WriteLine("ship draw debug 12");
         }
 
@@ -104,13 +106,13 @@ namespace Game
         {
             if (Program.debug1) Console.WriteLine("shoot");
             if (exploded) return;
-            // Program.gameManager.bulletsShoot.Add(new Bullet(this.pos, this.dir, this.ang));
+            // Program.gameManager.bulletsShoot.Add(new Bullet(this.transform.getPosition(), this.dir, this.ang));
             if (Program.debug1) Console.WriteLine("shoot 2");
-            // Program.gameManager.bulletsShoot.Add(GameManager.bulletPool.Get(this.pos, this.dir, this.ang));
+            // Program.gameManager.bulletsShoot.Add(GameManager.bulletPool.Get(this.transform.getPosition(), this.dir, this.ang));
 
-            // Program.gameManager.bulletPool.(this.pos, this.dir, this.ang);
-            // GameManager.bulletPool.Get(this.pos, this.dir, this.ang);
-            Bullet bullet = GameManager.bulletPool.Get(this.pos, this.dir, this.ang);
+            // Program.gameManager.bulletPool.(this.transform.getPosition(), this.dir, this.ang);
+            // GameManager.bulletPool.Get(this.transform.getPosition(), this.dir, this.ang);
+            Bullet bullet = GameManager.bulletPool.Get(this.transform.getPosition(), this.dir, this.transform.getRotation());
             if (Program.debug1) Console.WriteLine("shoot 3");
             GameManager.bulletPool.AddActiveBullet(bullet);
         }
@@ -136,8 +138,8 @@ namespace Game
 
             if (Outside()) Kill();
 
-            this.dir = new Vector2((float)Math.Cos(CalcRadians(this.ang)),
-                (float)Math.Sin(CalcRadians(this.ang)));
+            this.dir = new Vector2((float)Math.Cos(CalcRadians(this.transform.getRotation())),
+                (float)Math.Sin(CalcRadians(this.transform.getRotation())));
 
             //this.AplicarFriccion(1, 0.05f);
             this.CalcularFisica(1F);
@@ -145,8 +147,8 @@ namespace Game
 
         public bool Outside()
         {
-            return (this.pos.x > 800 - 25 || this.pos.x < 0 + 25 ||
-                this.pos.y > 600 - 25 || this.pos.y < 0 + 25);
+            return (this.transform.getPosition().x > 800 - 25 || this.transform.getPosition().x < 0 + 25 ||
+                this.transform.getPosition().y > 600 - 25 || this.transform.getPosition().y < 0 + 25);
         }
 
         public void Kill()
@@ -166,12 +168,19 @@ namespace Game
         public void Reset()
         {
             this.alive = true;
-            this.pos = initialPos;
+            Console.WriteLine(initialPos.x);
+            Console.WriteLine(initialPos.y);
+            Console.WriteLine(this.transform.getPosition().x);
+            Console.WriteLine(this.transform.getPosition().y);
+            // this.transform.setPosition(initialPos);
+            Console.WriteLine(this.transform.getPosition().x);
+            Console.WriteLine(this.transform.getPosition().y);
             this.ace = new Vector2(0, 0);
             this.vel = new Vector2(0, 0);
             this.dir = new Vector2(1, 0);
 
-            this.ang = 0;
+            // this.ang = 0;
+            this.transform.setRotation(0);
             this.aang = 0;
             this.vang = 0;
 
@@ -181,7 +190,6 @@ namespace Game
             cAnimation = idle;
 
             exploded = false;
-
         }
     }
 }

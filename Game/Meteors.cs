@@ -25,15 +25,15 @@ namespace Game
         public void Draw()
         {
             if (this.alive) Engine.Draw(Engine.GetTexture("meteor.png"),
-                this.pos.x, this.pos.y, this.rad, this.rad, this.ang, 12 * this.rad, 12 * this.rad);
+                this.transform.getPosition().x, this.transform.getPosition().y, this.rad, this.rad, this.transform.getRotation(), 12 * this.rad, 12 * this.rad);
 
-            Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.pos.x, this.pos.y, 2, 2);
+            Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.transform.getPosition().x, this.transform.getPosition().y, 2, 2);
         }
 
         public void Update()
         {
             if (Outside()) Kill();
-            this.ang += rotateSpeed;
+            this.transform.setRotation(this.transform.getRotation() + rotateSpeed);
             Move();
             this.CalcularFisica(1F);
         }
@@ -41,7 +41,7 @@ namespace Game
         // actualizar para que tome las esquinas y no el centro 
         public bool Outside()
         {
-            return (this.pos.x > 800 || this.pos.x < 0 || this.pos.y > 600 || this.pos.y < 0);
+            return (this.transform.getPosition().x > 800 || this.transform.getPosition().x < 0 || this.transform.getPosition().y > 600 || this.transform.getPosition().y < 0);
         }
 
         public void Kill()

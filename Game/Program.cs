@@ -44,6 +44,7 @@ namespace Game
                         GetGameManager().updateMenu();
                         if (!(Engine.GetKey(Keys.E))) continue;
                         GetGameManager().resetValues();
+                        Ship.GetInstance().transform.setPosition(Ship.GetInstance().initialPos);
                         break;
 
                     case GameStage.Gameplay:

@@ -4,12 +4,14 @@ using System.Media;
 
 namespace Game {
     public class Cuerpo {
-        public Vector2 pos { get; set; }
+        // public Vector2 pos { get; set; }
         public Vector2 vel { get; set; }
         public Vector2 ace { get; set; }
         public Vector2 dir { get; set; }
 
-        public float ang { get; set; }
+        // public float ang { get; set; }
+        // public Transform transform { get; set; }
+        public Transform transform;
         public float vang { get; set; }
         public float aang { get; set; }
 
@@ -19,10 +21,18 @@ namespace Game {
         public float rad { get; set; }
 
         public Cuerpo(Vector2 pos) {
-            this.pos = pos;
+            transform = new Transform(pos, 0, new Vector2(1, 1));
+            // this.pos = pos;
+            Console.WriteLine($"Cuerpo debug 0: pos={pos.x}");
+            Console.WriteLine($"Cuerpo debug 0.1: pos={pos.y}");
+            transform.setPosition(pos);
+            Console.WriteLine($"Cuerpo debug 1: transform.getPosition()={transform.getPosition().x}");
+            Console.WriteLine($"Cuerpo debug 2: transform.getPosition()={transform.getPosition().y}");
             vel = new Vector2(0, 0);
             ace = new Vector2(0, 0);
-            ang = 0;
+            // ang = 0;
+            transform.setRotation(0);
+
             vang = 0;
             aang = 0;
             masa = 3;
@@ -35,10 +45,11 @@ namespace Game {
         public void CalcularFisica(float dt) {
             // a -> v -> x
             vel = new Vector2(vel.x + ace.x * dt, vel.y + ace.y * dt);
-            pos = new Vector2(pos.x + vel.x * dt, pos.y + vel.y * dt);
+            transform.setPosition(new Vector2(transform.getPosition().x + vel.x * dt, transform.getPosition().y + vel.y * dt));
 
             vang += aang * dt;
-            ang += vang * dt;
+            // ang += vang * dt;
+            transform.setRotation(transform.getRotation() + vang * dt);
 
             aang = 0;
             ace = Vector2.zero;
