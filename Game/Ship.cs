@@ -6,7 +6,7 @@ using System.Media;
 namespace Game
 {
     // aplicar singleton a Ship porque solo puede haber 1 Nave
-    public class Ship : Cuerpo
+    public class Ship : Cuerpo , IKillable
     {
         // public Cuerpo Nave { get; private set; }
         // private Vector2 initialPos;

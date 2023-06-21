@@ -48,6 +48,9 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="Animations.cs" />
     <Compile Include="BulletPool.cs" />
+    <Compile Include="IGameOject.cs" />
+    <Compile Include="IKillable.cs" />
+    <Compile Include="IFisica.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bullet.png">

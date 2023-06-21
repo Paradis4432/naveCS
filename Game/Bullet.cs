@@ -4,7 +4,7 @@ using System.Media;
 
 namespace Game
 {
-    public class Bullet : Cuerpo
+    public class Bullet : Cuerpo , IGameOject, IKillable
     {
         public Bullet(Vector2 initialPos, Vector2 dir, float ang) : base(initialPos)
         {

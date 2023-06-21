@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Media;
 
 namespace Game {
-    public class Cuerpo {
+    public class Cuerpo : IFisica {
         // public Vector2 pos { get; set; }
         public Vector2 vel { get; set; }
         public Vector2 ace { get; set; }

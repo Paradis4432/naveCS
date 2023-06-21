@@ -4,7 +4,7 @@ using System.Media;
 
 namespace Game
 {
-    public class Meteors : Cuerpo
+    public class Meteors : Cuerpo , IGameOject, IKillable
     {
         public int rotateSpeed;
         public Meteors(Vector2 navePos, Vector2 metPos) : base(metPos)
