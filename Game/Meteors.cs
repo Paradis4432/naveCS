@@ -7,10 +7,11 @@ namespace Game
     public class Meteors : Cuerpo , IGameOject, IKillable
     {
         public int rotateSpeed;
-        public Meteors(Vector2 navePos, Vector2 metPos) : base(metPos)
+        public Meteors(Vector2 navePos, Vector2 metPos) : base(metPos, new Vector2(0,0))
         {
             rotateSpeed = 0;
             this.dir = Vector2.Normalize(new Vector2(navePos.x - metPos.x, navePos.y - metPos.y));
+
         }
 
         public void Move()
@@ -24,9 +25,12 @@ namespace Game
 
         public void Draw()
         {
-            if (this.alive) Engine.Draw(Engine.GetTexture("meteor.png"),
-                this.transform.getPosition().x, this.transform.getPosition().y, this.rad, this.rad, this.transform.getRotation(), 12 * this.rad, 12 * this.rad);
 
+            // if (this.alive) Engine.Draw(Engine.GetTexture("meteor.png"),
+                // this.transform.getPosition().x, this.transform.getPosition().y, this.rad, this.rad, this.transform.getRotation(), 12 * this.rad, 12 * this.rad);
+            if (this.alive) Renderer.Render(Engine.GetTexture("meteor.png"), this.transform, this.rad);
+
+            // este es debug
             Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.transform.getPosition().x, this.transform.getPosition().y, 2, 2);
         }
 

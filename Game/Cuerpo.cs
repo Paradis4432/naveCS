@@ -20,8 +20,8 @@ namespace Game {
         public float speed { get; set; }
         public float rad { get; set; }
 
-        public Cuerpo(Vector2 pos) {
-            transform = new Transform(pos, 0, new Vector2(1, 1));
+        public Cuerpo(Vector2 pos, Vector2 offset) {
+            transform = new Transform(pos, 0, new Vector2(1, 1), offset);
             // this.pos = pos;
             Console.WriteLine($"Cuerpo debug 0: pos={pos.x}");
             Console.WriteLine($"Cuerpo debug 0.1: pos={pos.y}");

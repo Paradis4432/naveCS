@@ -68,8 +68,9 @@ namespace Game
         private Vector2 position;
         private float rotation;
         private Vector2 scale;
+        private Vector2 offset;
 
-        public Transform(Vector2 p_initialPosition, float p_initialRotation, Vector2 p_scale)
+        public Transform(Vector2 p_initialPosition, float p_initialRotation, Vector2 p_scale, Vector2 p_offset)
         {
             Console.WriteLine($"Transform debug 0: p_initialPosition={p_initialPosition.x}");
             Console.WriteLine($"Transform debug 0.1: p_initialPosition={p_initialPosition.y}");
@@ -79,6 +80,7 @@ namespace Game
             position = p_initialPosition;
             rotation = p_initialRotation;
             scale = p_scale;
+            offset = p_offset;
         }
 
         public void setPosition(Vector2 pos)
@@ -96,6 +98,11 @@ namespace Game
             scale = scal;
         }
 
+        public void setOffset(Vector2 off)
+        {
+            offset = off;
+        }
+
         public Vector2 getPosition()
         {
             return position;
@@ -110,6 +117,13 @@ namespace Game
         {
             return scale;
         }
+
+        public Vector2 getOffset()
+        {
+            return offset;
+        }
+
+        
     }
 
     public enum GameStage

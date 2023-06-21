@@ -6,7 +6,7 @@ using System.Media;
 namespace Game
 {
     // aplicar singleton a Ship porque solo puede haber 1 Nave
-    public class Ship : Cuerpo , IKillable
+    public class Ship : Cuerpo, IKillable
     {
         // public Cuerpo Nave { get; private set; }
         // private Vector2 initialPos;
@@ -19,7 +19,7 @@ namespace Game
         // private static GameManager gameManager = Program.gameManager;
         public bool exploded = false;
 
-        private Ship(Vector2 initialPos) : base(initialPos)
+        private Ship(Vector2 initialPos) : base(initialPos, new Vector2(35, 20))
         {
             this.initialPos = initialPos;
             // Nave = new Cuerpo(initialPos);
@@ -82,8 +82,8 @@ namespace Game
                 if (Program.debug) Console.WriteLine("ship draw debug 5");
                 if (Program.debug) Engine.Debug(cAnimation.Id);
                 if (Program.debug) Console.WriteLine("ship draw debug 6");
-                Engine.Draw(cAnimation.CurrentFrame, this.transform.getPosition().x, this.transform.getPosition().y, 1, 1, this.transform.getRotation(), 35, 20);
-                Engine.Draw(cAnimation.CurrentFrame, this.transform.getPosition().x, this.transform.getPosition().y, 1, 1, this.transform.getRotation(), 35, 20);
+                // Engine.Draw(cAnimation.CurrentFrame, this.transform.getPosition().x, this.transform.getPosition().y, 1, 1, this.transform.getRotation(), 35, 20);
+                Renderer.Render(cAnimation.CurrentFrame, this.transform);
                 if (Program.debug) Console.WriteLine("ship draw debug 7");
             }
 
@@ -97,7 +97,9 @@ namespace Game
                                    // }
 
                     if (Program.debug) Console.WriteLine("ship draw debug 11");
+            // este es debug
             Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.transform.getPosition().x, this.transform.getPosition().y, 2, 2);
+
             if (Program.debug) Console.WriteLine("ship draw debug 12");
         }
 

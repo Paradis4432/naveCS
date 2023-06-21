@@ -37,6 +37,7 @@ namespace Game
         {
             Engine.Clear();
             Engine.Draw(Engine.GetTexture("menu.png"), 0, 0, 1, 1, 0, 0, 0);
+
             Engine.Show();
         }
 

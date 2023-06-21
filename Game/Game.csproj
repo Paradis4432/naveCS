@@ -51,6 +51,7 @@
     <Compile Include="IGameOject.cs" />
     <Compile Include="IKillable.cs" />
     <Compile Include="IFisica.cs" />
+    <Compile Include="Renderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bullet.png">

@@ -18,16 +18,20 @@ namespace Game
                     met.rad = 1;
                     met.speed = 0.8F;
                     met.rotateSpeed = new Random().Next(30);
+                    met.transform.setOffset(new Vector2(met.rad * 12, met.rad * 12));
+
                     break;
                 case MeteorType.Big:
                     met.rad = 2;
                     met.speed = 0.4F;
                     met.rotateSpeed = new Random().Next(10);
+                    met.transform.setOffset(new Vector2(met.rad * 12, met.rad * 12));
                     break;
                 case MeteorType.Small:
                     met.rad = 0.5f;
                     met.speed = 1.2F;
                     met.rotateSpeed = new Random().Next(50);
+                    met.transform.setOffset(new Vector2(met.rad * 12, met.rad * 12));
                     break;
             }
             return met;

@@ -6,7 +6,7 @@ namespace Game
 {
     public class Bullet : Cuerpo , IGameOject, IKillable
     {
-        public Bullet(Vector2 initialPos, Vector2 dir, float ang) : base(initialPos)
+        public Bullet(Vector2 initialPos, Vector2 dir, float ang) : base(initialPos, new Vector2(0, 0))
         {
             // this.ang = ang;
             this.transform.setRotation(ang);
@@ -31,9 +31,12 @@ namespace Game
             if (this.alive)
             {
                 // add offset 
-                Engine.Draw(Engine.GetTexture("bullet.png"), this.transform.getPosition().x, this.transform.getPosition().y, this.transform.getScale().x, this.transform.getScale().y, this.transform.getRotation(), 0, 0);
+                // Engine.Draw(Engine.GetTexture("bullet.png"), this.transform.getPosition().x, this.transform.getPosition().y, this.transform.getScale().x, this.transform.getScale().y, this.transform.getRotation(), 0, 0);
+                Renderer.Render(Engine.GetTexture("bullet.png"), this.transform);
             }
 
+
+            // este es debug
             Engine.Draw(Engine.GetTexture("dotGREEN.png"), this.transform.getPosition().x, this.transform.getPosition().y, 2, 2);
 
         }
