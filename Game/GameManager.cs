@@ -104,10 +104,29 @@ namespace Game
 
             // meteors.Add(new Meteors(ship.pos, new Vector2(50, 1)));
 
-            // spawn a meteor of random type
             int rand = new Random().Next(3);
+            Vector2 metpos = new Vector2(0, 0);
+            switch (rand)
+            {
+                case 0:
+                    metpos.x = new Random().Next(800);
+                    metpos.y = 0;
+                    break;
+                case 1:
+                    metpos.x = 0;
+                    metpos.y = new Random().Next(600);
+                    break;
+                case 2:
+                    metpos.x = 800;
+                    metpos.y = new Random().Next(600);
+                    break;
+                case 3:
+                    metpos.x = new Random().Next(800);
+                    metpos.y = 600;
+                    break;
+            }
 
-            meteors.Add(MeteorFactory.CreateMeteor(ship.transform.getPosition(), new Vector2(50, 1), (MeteorType) rand));
+            meteors.Add(MeteorFactory.CreateMeteor(ship.transform.getPosition(), metpos, (MeteorType) rand));
             secsCounter++;
         }
 
